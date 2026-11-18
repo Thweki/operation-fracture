@@ -20,3 +20,10 @@
 
 - 离线网页包已加入 Release。公开路径待协调隔离部署后再作为正式上线。交互游玩尚未经浏览器实测。
 
+## 2026-11-18 — Short Web smoke test (docs only)
+
+- Added [TESTING.md](TESTING.md) and later verification screenshots in `docs/browser-smoke-2026-11-18/`. No game source or `dist/index.html` was changed.
+- Smoke test was on the publishing agent’s computer at `http://127.0.0.1:8870/fracture/`, not the user’s Mac, and not a verification of the public site URL.
+- Observed: title and combat OK; W movement was not clearly confirmed; F showed a pulse beam and particles, with a recorded cooldown of about 7.9 seconds; refresh returned to the deploy title with no「继续」. Console: no errors. Audio and a full playthrough/QA were not tested. This is not a pass.
+
+- 仅增加测试文档与事后截图，未改游戏源码或离线 HTML。短烟测不是通过结论。

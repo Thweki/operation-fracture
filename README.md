@@ -26,11 +26,11 @@ The original play instructions are kept unchanged in [开始使用.md](开始使
 This is a browser game. There are **no** native Windows, macOS, or Linux installers, and the game will not be rewritten just to add those packages.
 
 1. **在线页面（计划中的独立路径）:** <https://page.thweki.com:8443/fracture/>  
-   该站点只在端口 **8443** 提供服务（不是 443）。**公开站点的隔离部署仍待协调，请先用 Release 里的离线包或本地 HTTP 服务试玩。交互游玩尚未经浏览器实测，不能视为已经通过。**
+   该站点只在端口 **8443** 提供服务（不是 443）。公开站点发布由其他流程负责；**本次浏览器短烟测是在代理电脑的 `http://127.0.0.1:8870/fracture/` 完成的，不是用户的 Mac，也不代表公开 URL 已验证。** 这只是一次短烟测，**不是测试通过，也不是完整 QA。** 范围、未测事项和截图见 [TESTING.md](TESTING.md)。
 2. **离线下载包:** 见 [GitHub Releases](https://github.com/Thweki/operation-fracture/releases)（预发布 / pre-release）中的 `Operation-Fracture-1.0.0-offline-web.zip`。解压后用支持 WebGL 2 的桌面浏览器打开 `dist/index.html`。场景、武器、音效和战区地图都打在这一份 HTML 里，可以离线打开。
 3. **一分钟试玩视频:** Release 中的 `Fracture-60s.mp4`（1920×1080、30 fps、60 秒）。视频很大，**没有**进入 git 历史。
 
-The planned isolated path is <https://page.thweki.com:8443/fracture/> (port **8443**, not 443). **Coordinated isolated publication is still pending. Use the offline zip from the Release, or a local HTTP server, for now. Interactive play has not been browser-verified and must not be treated as passing.**
+The planned isolated path is <https://page.thweki.com:8443/fracture/> (port **8443**, not 443). Public-site publication is handled separately. **The short browser smoke test was run on the publishing agent’s computer at `http://127.0.0.1:8870/fracture/`, not on the user’s Mac, and it does not verify the public URL.** It is **not a pass and not a complete QA.** Scope, untested items, and screenshots: [TESTING.md](TESTING.md).
 
 主界面点击「投入战斗」开始。操作与音频设置在主界面右上角。原说明还写了从源码运行的方式：在 `source/` 使用 Node.js 24 与 `npm ci`、`npm test`、`npm run dev`（首次安装依赖需要联网）。本仓库发布过程**没有**执行这些脚本，也没有把它们的结果当作验证结论。
 
@@ -55,4 +55,5 @@ There is **no project-level license** for the original source, page, and assets.
 - `开始使用.md`：原使用说明
 - `licenses/`：第三方许可
 - `CHANGES.md`：公开时的记录
+- `TESTING.md`、`docs/browser-smoke-2026-11-18/`：2026-11-18 短烟测记录与事后验证截图（不是原包美术）
 - 试玩视频只放在 Release，不进入 git 历史
