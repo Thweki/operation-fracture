@@ -1,0 +1,10 @@
+# Dependencies and caches
+source/node_modules/
+source/.qa/
+**/__pycache__/
+.DS_Store
+# Videos belong in GitHub Releases, not git history
+*.mp4
+video/
+# npm run build writes here; the published offline file is /dist/index.html at the repo root
+source/dist/

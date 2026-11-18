@@ -1,0 +1,18 @@
+{
+  "name": "exo-atlas-silent-garden",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node build.mjs --dev",
+    "build": "node build.mjs",
+    "test": "node --test campaign.test.mjs combat.test.mjs flight.test.mjs",
+    "preview": "node build.mjs --preview"
+  },
+  "dependencies": {
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

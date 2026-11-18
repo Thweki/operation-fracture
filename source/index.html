@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101b1d">
+  <meta name="description" content="断环行动，一场穿越异星花园、潮池与熔炉的第一人称战役。">
+  <title>断环行动 · 寂静花园</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23132122'/%3E%3Cpath d='m3 24 12-19h5L8 24zm12-7 5-8 9 15h-6l-4-6-3 4h-4z' fill='%23e5d29e'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main id="atlas">
+  <svg class="symbols" aria-hidden="true"><defs>
+    <symbol id="i-brand" viewBox="0 0 44 40"><path d="M2 32 19 5h7L9 32zm15-5 7-11 10 16h-8l-4-7-3 5h-5zM30 5h5l-4 6h-5z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 5 6-2 6 3 6-2v15l-6 2-6-3-6 2zM9 3v15m6-12v15"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3zM16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5m6 0h5v5m0 6v5h-5m-6 0H4v-5"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M3 7h5m5 0h8M3 17h10m5 0h3"/><circle cx="10.5" cy="7" r="2.5"/><circle cx="15.5" cy="17" r="2.5"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14m8-14v14" stroke-width="2.8"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M2 13h4l3-6 3 11 3-15 3 10h4"/></symbol>
+    <symbol id="i-ward" viewBox="0 0 24 24"><path d="m12 2 8 4v6c0 4-4 8-8 10-4-2-8-6-8-10V6zM8 12l3 3 5-6"/></symbol>
+    <symbol id="i-arc" viewBox="0 0 24 24"><path d="m14 2-9 12h6l-1 8 9-13h-6z"/></symbol>
+    <symbol id="i-dash" viewBox="0 0 24 24"><path d="m3 7 7 5-7 5m8-10 7 5-7 5"/></symbol>
+    <symbol id="i-fire" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><path d="M12 1v6m0 10v6M1 12h6m10 0h6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M3 12h17m-6-6 6 6-6 6"/></symbol>
+  </defs></svg>
+  <div id="world"><canvas id="landscape" tabindex="0" aria-label="断环行动三维战场"></canvas></div>
+  <section id="landing" aria-label="战役部署">
+    <header class="mast"><div class="wordmark"><svg><use href="#i-brand"/></svg><span>AETHER<strong>FRONTIER</strong></span></div>
+      <div class="utilities"><button id="landing-settings" class="icon-btn" aria-label="操作与音频设置" title="操作与音频"><svg><use href="#i-settings"/></svg></button><button id="sound" class="icon-btn" aria-label="开启声音" title="声音"><svg><use href="#i-sound"/></svg></button><button id="fullscreen" class="icon-btn" aria-label="全屏" title="全屏"><svg><use href="#i-full"/></svg></button></div></header>
+    <div class="landing-hero"><div class="eyebrow"><i></i> VESPER–04 <span>/</span> 单人战役</div><p class="franchise">寂 静 花 园</p><h1>断环行动</h1><div class="latin">Operation Fracture</div>
+      <p class="brief">从绯红花海突入敌阵，夺取潮汐与日冕双钥。<br>星门另一侧，终端守卫正在苏醒。</p>
+      <div class="landing-actions"><button id="battle-start" class="primary" disabled>投入战斗 <svg><use href="#i-arrow"/></svg></button><button id="landing-map" class="secondary" disabled><svg><use href="#i-map"/></svg> 战区地图</button></div>
+    </div>
+    <aside id="assignment"><div class="line-label"><span>当前部署</span><small>FIELD ORDER</small></div><div class="assignment-name"><b id="deploy-number">01</b><div><small id="deploy-code">BLOOM</small><strong id="deploy-name">绯红前线</strong></div></div><div class="track" id="campaign-track"></div><div class="card-foot"><span id="deploy-threat">巡弋机群</span><span id="deploy-progress">0 / 5 战区</span></div></aside>
+    <footer class="landing-footer"><span><b class="signal-dot"></b> 地表链路在线</span><span>第一人称　/　区域作战</span></footer>
+  </section>
+
+  <section id="battle-hud" hidden aria-label="作战界面">
+    <div class="mission-hud"><div class="mission-tile"><svg><use href="#i-brand"/></svg></div><div><small id="mission-code"></small><strong id="mission-name"></strong><div class="wave-track"></div><span id="battle-count"></span></div></div>
+    <div class="heading"><div class="heading-rule"></div><span id="heading-value">N</span><div class="heading-rule"></div></div>
+    <div class="hud-tools"><button id="battle-map" class="icon-btn" aria-label="战区地图 (M)"><svg><use href="#i-map"/></svg></button><button id="battle-pause" class="icon-btn" aria-label="暂停战斗"><svg><use href="#i-pause"/></svg></button></div>
+    <div id="boss-hud" hidden><div><span id="boss-name"></span><b id="boss-phase"></b></div><div class="boss-meter"><i></i></div><small id="boss-order"></small></div>
+    <div id="enemy-marks" aria-hidden="true"></div><div id="aim-reticle" aria-hidden="true"><i></i><b></b></div><div id="damage-edge"></div>
+    <div id="damage-text" aria-hidden="true"></div><div id="hit-direction" hidden></div>
+    <div id="wave-flash" role="status"><small id="wave-index"></small><strong id="wave-name"></strong></div>
+    <div id="route-tag" hidden><span>◇</span><b></b><small></small></div>
+    <div id="threat-cue" hidden><strong></strong><span></span></div><div id="field-tip" hidden></div>
+    <div class="pilot-hud"><small class="hud-label">机体状态</small><div class="vital"><span>护盾</span><div><i id="shield-fill"></i></div><b id="shield-value">75</b></div><div class="vital health"><span>机体</span><div><i id="health-fill"></i></div><b id="health-value">100</b></div></div>
+    <div class="weapon-hud"><button id="cycle-weapon" title="切换武器 (1 / 2 / 3 / 4)"><span id="weapon-slot">01</span><span><small id="weapon-class">能量卡宾</small><strong id="weapon-name">棱镜卡宾</strong></span><b>⇄</b></button><div class="heat-meter"><i id="heat-fill"></i></div><span id="weapon-state">待机</span></div>
+    <div class="abilities" aria-label="技能栏"></div>
+    <div id="flight-stick" aria-label="移动摇杆"><i></i></div><button id="touch-fire" aria-label="按住开火并拖动瞄准"><svg><use href="#i-fire"/></svg></button>
+    <div class="lift-controls"><button data-move="KeyE" aria-label="上升">升</button><button data-move="KeyQ" aria-label="下降">降</button></div>
+  </section>
+  <dialog id="operations" aria-labelledby="ops-title"><div class="ops-shell"><header class="ops-head"><div><div class="eyebrow"><i></i> TACTICAL NETWORK</div><h2 id="ops-title">战区地图</h2></div><button id="close-ops" class="icon-btn close-btn" aria-label="关闭">×</button></header><div id="ops-body"></div></div></dialog>
+  <div id="toast" role="status"></div>
+  <div id="loading" role="status"><div class="loading-ring"></div><strong>正在接入行星战区</strong></div>
+  <div id="failure" hidden role="alert"></div>
+</main>
+<script type="module" src="./app.js"></script>
+</body></html>
