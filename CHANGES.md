@@ -12,3 +12,11 @@
 - 60 秒试玩视频不进入 git 历史，只作为 Release 资源。
 - 本提交只增加公开说明文件，未改原说明、源码或 `dist/index.html`。
 - 未制作原生桌面安装包。
+
+## 2026-11-18 — Publication status
+
+- Offline web package `Operation-Fracture-1.0.0-offline-web.zip` was attached to the pre-release. It is the original `dist/index.html` plus the original instructions and third-party licenses (SHA-256 `77909d7acab7319ca90103d2d6d1be9f113776a698354fd5519eb2e982994edf`).
+- Public path `https://page.thweki.com:8443/fracture/` is the intended isolated location, but coordinated isolated deployment is still pending. Interactive play has not been browser-verified.
+
+- 离线网页包已加入 Release。公开路径待协调隔离部署后再作为正式上线。交互游玩尚未经浏览器实测。
+
